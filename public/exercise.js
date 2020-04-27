@@ -27,7 +27,6 @@ async function initExercise() {
   if (workout) {
     location.search = "?id=" + workout._id;
   }
-
 }
 
 initExercise();
@@ -115,6 +114,7 @@ async function handleFormSubmit(event) {
   }
 
   await API.addExercise(workoutData);
+  console.log(JSON.stringify(workoutData) + " this data is from the submit form");
   clearInputs();
   toast.classList.add("success");
 }
